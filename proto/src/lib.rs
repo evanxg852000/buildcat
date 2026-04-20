@@ -1,8 +1,4 @@
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        let result = 2 + 2;
-        assert_eq!(result, 4);
-    }
-}
+mod protobuf;
+
+pub use protobuf::build::bazel::{remote, semver};
+pub const SERVICE_DESCRIPTOR: &[u8] = include_bytes!("protobuf/services_descriptor.bin");

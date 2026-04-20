@@ -1,7 +1,50 @@
 [workspace]
+resolver = "3"
 
 members = [
     "cli",
     "common",
     "proto",
 ]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+homepage = "https://buildcat.github.io"
+documentation = "https://buildcat.github.io/docs"
+repository = "https://github.com/evanxg852000/buildcat"
+authors = ["Evance Soumaoro, <evanxg852000@gmail.com>"]
+license = "AGPL-3.0"
+
+[workspace.dependencies]
+openraft = { git = "https://github.com/databendlabs/openraft.git", rev = "b3b0af0", features = ["serde", "tracing-log", "type-alias"] }
+clap = { version = "4.5.30", features = ["derive", "env"] }
+serde = { version = "1.0.218", features = ["derive"] }
+serde_json = "1.0.139"
+tokio = { version = "1.0", features = ["full"] }
+tokio-util = "0.7.13"
+tokio-stream = "0.1.17"
+tracing = "0.1.29"
+tracing-subscriber = { version = "0.3.0", features = ["env-filter"] }
+tonic = "0.12.3"
+tonic-reflection = "0.12.3"
+tonic-build = "0.12.3"
+dashmap = "6.1.0"
+prost = "0.13.4"
+prost-types = "0.13.4"
+futures = "0.3.31"
+redb = "2.1.1"
+byteorder = "1.5.0"
+bincode = "1.3.3"
+anyhow = "1.0.63"
+bytes = { version = "1.10.0", features = ["serde"] }
+thiserror = "2.0.11"
+bio = "2.0.3"
+maplit = "1.0.2"
+tempfile = "3.4.0"
+serial_test = "3.2.0"
+prost-build = "0.13.4"
+tempdir = "0.3.7"
+num-traits = "0.2.19"
+
+proto = { path = "proto" }
